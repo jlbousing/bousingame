@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/bousingame.js">
+
+    </script>
+  </head>
+  <body>
+     <canvas id="canvasGame"></canvas>
+
+     <script type="text/javascript">
+         var id = document.getElementById("canvasGame");
+         var game = new bousingame(id,800,600);
+         console.log(game);
+         //var objeto1 = game.createGameObject("objeto",100,200,"imagen");
+         //console.log(objeto1);
+         //console.warn("imprimiendo un objeto con un spritesheet");
+         //var objeto2 = game.createGameObject("objeto2",200,200,null,"assets/cloud_spritesheet.png");
+         //game.animateGameObject(objeto2,10,10,120,25,300);
+
+         game.createScene("escena1");
+         console.log(game.scenes);
+         var objeto = game.createGameObject("objeto2",200,200,null,"assets/cloud_spritesheet.png","escena1");
+         game.animateGameObject(objeto,8,120,25,300);
+         game.clickEnableGameObject(objeto);
+     </script>
+  </body>
+</html>
